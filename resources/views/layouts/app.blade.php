@@ -16,6 +16,7 @@
 		<link rel="stylesheet" href="{{asset('css/plugins/owl.theme.default.min.css')}}">
 		<link rel="stylesheet" href="{{asset('css/plugins/jquery.animatedheadline.css')}}">
         <link rel="stylesheet" href="{{asset('css/plugins/subtle-slideshow.css')}}">
+        <link rel="stylesheet" href="{{asset('css/plugins/leaflet.css')}}">
 
 		<!-- CSS Base -->
         <link rel="stylesheet" class="theme-st" href="{{asset('css/style-dark.css')}}">
@@ -163,6 +164,7 @@
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/leaflet.js')}}"></script>
     <script src="{{asset('js/simplebar.js')}}"></script>
     <script src="{{asset('js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('js/jquery.subtle-slideshow.js')}}"></script>
@@ -171,6 +173,8 @@
     <script src="{{asset('js/jquery.easypiechart.js')}}"></script>
     <script src="{{asset('js/jquery.validation.js')}}"></script>
     <script src="{{asset('js/tilt.js')}}"></script>
+    <script src="{{asset('js/map.js')}}"></script>
+
     <script src="{{asset('js/main.js')}}"></script>
     <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
 
