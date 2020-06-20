@@ -170,7 +170,7 @@
   bottom: 0;
 }
 
-#slideshow .banner {
+#slideshow .section-title-wrapper-home .banner {
   position: absolute;
   z-index: 2;
 }

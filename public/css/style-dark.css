@@ -1014,18 +1014,18 @@ blockquote:before,
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0.2;
+    opacity: 0.001;
 	background-color: #12171b;
 }
 
 .pt-home .banner {
 	position: absolute;
-	width: 90%;
+	width: 80%;
     top: 50%;
 	color: #fff;
-    text-align: center;
-	-webkit-transform: translateY(-50%);
-			transform: translateY(-50%);
+    /* text-align: center; */
+	-webkit-transform: translateY(-27%);
+			transform: translateY(-27%);
 	z-index: 1;
 }
 
@@ -1107,8 +1107,8 @@ blockquote:before,
 .the-square {
 	position: absolute;
 	right: 0;
-	/* left: -44px;
-	top: -36px; */
+	left: -44px;
+	top: -36px;
 	margin: 0;
 	border: 15px solid rgba(255, 252, 0, .95);
 	z-index: 3;
@@ -1116,7 +1116,7 @@ blockquote:before,
 	@media all and (min-width: 1920px) {
 		.the-square {
 		  left: -49px;
-		  top: -35px;
+		  top: -126px;
 		}
 	  }
 	  
@@ -1946,11 +1946,13 @@ blockquote:before,
 
 .pt-contact .contact-info .info p {
     font-size: 15px;
-    line-height: 25px;
-    padding: 30px 0 0px;
+    line-height: 18px;
+    padding: 15px 0 0px;
 }
 
 .pt-contact .contact-info .info span {
+	display: block;
+	padding: 30px 0px 0px;
     color: #495057;
 }
 
@@ -2710,6 +2712,130 @@ blockquote:before,
 }
 
 /* ---------------------------------
+		14. Overlay
+--------------------------------- */
+.overlay::before,
+.overlay-video::before {
+content: "";
+position: absolute;
+display: block;
+width: -webkit-calc(100% - 260px);
+width: -moz-calc(100% - 260px);
+width: calc(100% - 260px);
+height: -webkit-calc(100% - 260px);
+height: -moz-calc(100% - 260px);
+height: calc(100% - 260px);
+top: 130px;
+right: 130px;
+bottom: 130px;
+left: 130px;
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+z-index: 10000000;
+}
+
+@media only screen and (max-width: 768px) {
+  .overlay.overlay-all::before {
+    width: -webkit-calc(100% - 70px);
+    width: -moz-calc(100% - 70px);
+    width: calc(100% - 70px);
+    height: -webkit-calc(100% - 70px);
+    height: -moz-calc(100% - 70px);
+    height: calc(100% - 70px);
+    top: 35px;
+    right: 35px;
+    bottom: 35px;
+    left: 35px;
+  }
+}
+
+.overlay::before {
+-webkit-pointer-events: none;
+   -moz-pointer-events: none;
+        pointer-events: none;
+}
+
+.overlay-video::before {
+-webkit-pointer-events: auto;
+   -moz-pointer-events: auto;
+        pointer-events: auto;
+}
+
+.overlay-dark-20::before {
+background: rgba(0, 0, 0, .45);
+}
+
+.cover-all::before,
+.cover-all-video::before,
+.cover-all-parallax::before {
+position: absolute;
+width: -webkit-calc(100% - 260px);
+width: -moz-calc(100% - 260px);
+width: calc(100% - 339px);
+height: -webkit-calc(100% - 260px);
+height: -moz-calc(100% - 260px);
+height: calc(100% - 260px);
+top: 130px;
+right: 130px;
+bottom: 130px;
+left: 266px;
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+z-index: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .cover-all::before,
+  .cover-all-video::before,
+  .cover-all-parallax::before {
+    width: -webkit-calc(100% - 110px);
+    width: -moz-calc(100% - 110px);
+    width: calc(100% - 110px);
+    height: -webkit-calc(100% - 150px);
+    height: -moz-calc(100% - 150px);
+    height: calc(100% - 150px);
+    top: 75px;
+    right: 55px;
+    bottom: 75px;
+    left: 55px;
+  }
+}
+
+.cover-all::before,
+.cover-all-video::before {
+background-image: -webkit-repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
+background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
+background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
+background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
+-webkit-background-size: 3px 3px;
+   -moz-background-size: 3px 3px;
+        background-size: 3px 3px;
+}
+
+.cover-all::before {
+-webkit-pointer-events: none;
+   -moz-pointer-events: none;
+        pointer-events: none;
+}
+
+/* ---------------------------------
+		14. Leaflet
+--------------------------------- */
+#mapid {
+	height: 400px;
+}
+
+.leaflet-popup-content p {
+	margin: 3px 0 !important;
+}
+
+/* ---------------------------------
 		14. Responsible Css
 --------------------------------- */
 @media screen and (max-width: 991px) {
@@ -3045,55 +3171,6 @@ blockquote:before,
 	}
 }*/
 
-/* Ken Burns Caption 
-@-webkit-keyframes kenburnsCaption {
-	0% {
-		opacity: 0;
-		-webkit-transform: scale(1);
-			   transform: scale(1);
-	}
-	5% {
-		opacity: 1
-	}
-	25% {
-		opacity: 1
-	}
-	40% {
-		opacity: 0;
-		-webkit-transform: scale(1.1);
-			   transform: scale(1.1);
-	}
-	100% {
-		opacity: 0;
-		-webkit-transform: scale(1);
-			   transform: scale(1);
-   }
-}
-
-@keyframes kenburnsCaption {
-	0% {
-		opacity: 0;
-		-webkit-transform: scale(1);
-			   transform: scale(1);
-	}
-	5% {
-		opacity: 1
-	}
-	25% {
-		opacity: 1
-	}
-	40% {
-		opacity: 0;
-		-webkit-transform: scale(1.1);
-			   transform: scale(1.1);
-	}
-	100% {
-		opacity: 0;
-		-webkit-transform: scale(1);
-			   transform: scale(1);
-   }
-}*/
-
 /* Background Line Animation */
 @-webkit-keyframes run {
 	0% {
@@ -3111,123 +3188,4 @@ blockquote:before,
 	100% {
 		top: 110%;
 	}
-}
-
-/* 7. overlay */
-.overlay::before,
-.overlay-video::before {
-content: "";
-position: absolute;
-display: block;
-width: -webkit-calc(100% - 260px);
-width: -moz-calc(100% - 260px);
-width: calc(100% - 260px);
-height: -webkit-calc(100% - 260px);
-height: -moz-calc(100% - 260px);
-height: calc(100% - 260px);
-top: 130px;
-right: 130px;
-bottom: 130px;
-left: 130px;
--webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
-        box-sizing: border-box;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-z-index: 10000000;
-}
-
-@media only screen and (max-width: 768px) {
-  .overlay.overlay-all::before {
-    width: -webkit-calc(100% - 70px);
-    width: -moz-calc(100% - 70px);
-    width: calc(100% - 70px);
-    height: -webkit-calc(100% - 70px);
-    height: -moz-calc(100% - 70px);
-    height: calc(100% - 70px);
-    top: 35px;
-    right: 35px;
-    bottom: 35px;
-    left: 35px;
-  }
-}
-
-.overlay::before {
--webkit-pointer-events: none;
-   -moz-pointer-events: none;
-        pointer-events: none;
-}
-
-.overlay-video::before {
--webkit-pointer-events: auto;
-   -moz-pointer-events: auto;
-        pointer-events: auto;
-}
-
-.overlay-dark-20::before {
-background: rgba(0, 0, 0, .45);
-}
-
-.cover-all::before,
-.cover-all-video::before,
-.cover-all-parallax::before {
-position: absolute;
-width: -webkit-calc(100% - 260px);
-width: -moz-calc(100% - 260px);
-width: calc(100% - 339px);
-height: -webkit-calc(100% - 260px);
-height: -moz-calc(100% - 260px);
-height: calc(100% - 260px);
-top: 130px;
-right: 130px;
-bottom: 130px;
-left: 266px;
--webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
-        box-sizing: border-box;
-z-index: 1;
-}
-
-@media only screen and (max-width: 768px) {
-  .cover-all::before,
-  .cover-all-video::before,
-  .cover-all-parallax::before {
-    width: -webkit-calc(100% - 110px);
-    width: -moz-calc(100% - 110px);
-    width: calc(100% - 110px);
-    height: -webkit-calc(100% - 150px);
-    height: -moz-calc(100% - 150px);
-    height: calc(100% - 150px);
-    top: 75px;
-    right: 55px;
-    bottom: 75px;
-    left: 55px;
-  }
-}
-
-.cover-all::before,
-.cover-all-video::before {
-background-image: -webkit-repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
-background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
-background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
-background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
--webkit-background-size: 3px 3px;
-   -moz-background-size: 3px 3px;
-        background-size: 3px 3px;
-}
-
-.cover-all::before {
--webkit-pointer-events: none;
-   -moz-pointer-events: none;
-        pointer-events: none;
-}
-
-#mapid {
-	height: 400px;
-}
-
-.leaflet-popup-content p {
-	margin: 3px 0 !important;
 }

@@ -5,7 +5,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
 		<!-- Title -->
-		<title>{{ config('app.name', 'Laravel') }}</title>
+		<title>PT. Daya Turangga Wisesa</title>
 
 		<!-- CSS Plugins -->
         <link rel="stylesheet" href="{{asset('css/plugins/bootstrap.min.css')}}">
@@ -117,9 +117,7 @@
       <!-- Main Site -->
       <div id="home">
         <div id="about">
-      <div id="resum">
        <div id="portfolio">
-      <div id="blog">
       <div id="contact">
 
           <div class="header-mobile">
@@ -142,14 +140,8 @@
                   <li data-tooltip="about" data-position="top">
                       <a href="#about" class="icon-a fas fa-user-tie"></a>
                   </li>
-                  <li data-tooltip="resum" data-position="top">
-                      <a href="#resum" class="icon-r fas fa-address-book"></a>
-                  </li>
                   <li data-tooltip="portfolio" data-position="top">
                       <a href="#portfolio" class="icon-p fas fa-briefcase"></a>
-                  </li>
-                  <li data-tooltip="blog" data-position="top">
-                      <a href="#blog" class="icon-b fas fa-receipt"></a>
                   </li>
                   <li data-tooltip="contact" data-position="bottom">
                       <a href="#contact" class="icon-c fas fa-envelope"></a>
