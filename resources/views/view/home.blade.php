@@ -10,30 +10,127 @@
                 {{-- <div id="slides">
                     <div class="slide">
                     <span class="animate down" style="background-image: url(../img/slider/8.jpg)"></span>
-                    <div class="banner"><h1>Subtle Slideshow With Ken Burns</h1><div class="the-square"></div></div>
+                    <div class="banner" style="
+                            position: absolute; /*! width: -webkit-calc(100% - 260px); */ /*! width: -moz-calc(100% - 260px); */
+                            width: calc(100% - 578px); /*! height: -webkit-calc(100% - 260px); */ /*! height: -moz-calc(100% - 260px); */
+                            height: calc(100% - 181px);
+                            top: 10%;
+                            right: 130px;
+                            bottom: 130px;
+                            left: 312px !important;
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+                            z-index: 2 !important;"><h1>Subtle Slideshow With Ken Burns</h1></div>
                     </div>
                     <div class="slide">
                     <span class="animate in" style="background-image: url(../img/slider/10.jpeg)"></span>
-                    <div class="banner"><h1>Subtle Slideshow With Ken Burns z</h1><div class="the-square"></div></div>
+                    <div class="banner" style="
+                            position: absolute; /*! width: -webkit-calc(100% - 260px); */ /*! width: -moz-calc(100% - 260px); */
+                            width: calc(100% - 578px); /*! height: -webkit-calc(100% - 260px); */ /*! height: -moz-calc(100% - 260px); */
+                            height: calc(100% - 181px);
+                            top: 10%;
+                            right: 130px;
+                            bottom: 130px;
+                            left: 312px !important;
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+                            z-index: 2 !important;"><h1>Subtle Slideshow With Ken Burns z</h1></div>
                     </div>
                     <div class="slide">
                     <span class="animate down" style="background-image: url(../img/slider/15.jpg)"></span>
-                    <div class="banner"><h1>Subtle Slideshow With Ken Burns x</h1><div class="the-square"></div></div>
+                    <div class="banner" style="
+                            position: absolute; /*! width: -webkit-calc(100% - 260px); */ /*! width: -moz-calc(100% - 260px); */
+                            width: calc(100% - 578px); /*! height: -webkit-calc(100% - 260px); */ /*! height: -moz-calc(100% - 260px); */
+                            height: calc(100% - 181px);
+                            top: 10%;
+                            right: 130px;
+                            bottom: 130px;
+                            left: 312px !important;
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+                            z-index: 2 !important;"><h1>Subtle Slideshow With Ken Burns x</h1></div>
                     </div>
                     <div class="slide">
                     <span class="animate out" style="background-image: url(../img/slider/16.jpg)"></span>
-                    <div class="banner"><h1>Subtle Slideshow With Ken Burns s</h1><div class="the-square"></div></div>
+                    <div class="banner" style="
+                            position: absolute; /*! width: -webkit-calc(100% - 260px); */ /*! width: -moz-calc(100% - 260px); */
+                            width: calc(100% - 578px); /*! height: -webkit-calc(100% - 260px); */ /*! height: -moz-calc(100% - 260px); */
+                            height: calc(100% - 181px);
+                            top: 10%;
+                            right: 130px;
+                            bottom: 130px;
+                            left: 312px !important;
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+                            z-index: 2 !important;"><h1>Subtle Slideshow With Ken Burns s</h1></div>
                     </div>
                     <div class="slide">
                     <span class="animate right" style="background-image: url(../img/slider/17.jpeg)"></span>
-                    <div class="banner"><h1>Subtle Slideshow With Ken Burns Effect</h1><div class="the-square"></div></div>
+                    <div class="banner" style="
+                            position: absolute; /*! width: -webkit-calc(100% - 260px); */ /*! width: -moz-calc(100% - 260px); */
+                            width: calc(100% - 578px); /*! height: -webkit-calc(100% - 260px); */ /*! height: -moz-calc(100% - 260px); */
+                            height: calc(100% - 181px);
+                            top: 10%;
+                            right: 130px;
+                            bottom: 130px;
+                            left: 312px !important;
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+                            z-index: 2 !important;"><h1>Subtle Slideshow With Ken Burns Effect</h1></div>
                     </div>
                 </div> --}}
-                <div class="slide">
-                    <span class="animate down" style="background-image: url(../img/slider/8.jpg)"></span>
-                    <div class="banner"><h1>Subtle Slideshow With Ken Burns</h1><div class="the-square"></div></div>
-                    
+                <div class="banner"
+                        style="
+                            position: absolute; /*! width: -webkit-calc(100% - 260px); */ /*! width: -moz-calc(100% - 260px); */
+                            width: calc(100% - 397px); /*! height: -webkit-calc(100% - 260px); */ /*! height: -moz-calc(100% - 260px); */
+                            height: calc(100% - 261px);
+                            right: 130px;
+                            bottom: 130px;
+                            left: 286px !important;
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+                            z-index: 1;">
+                        <div class="the-square"></div>
                     </div>
+                <div class="slide">
+                    <span class="animate down" style="background-image: url(../img/slider/8.jpg);"></span>
+                    <div class="banner" style="
+                            position: absolute; /*! width: -webkit-calc(100% - 260px); */ /*! width: -moz-calc(100% - 260px); */
+                            width: calc(100% - 578px); /*! height: -webkit-calc(100% - 260px); */ /*! height: -moz-calc(100% - 260px); */
+                            height: calc(100% - 181px);
+                            top: 10%;
+                            right: 130px;
+                            bottom: 130px;
+                            left: 312px !important;
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+                            z-index: 2 !important;">
+                        <h1>Subtle Slideshow With Ken Burns asdasw</h1>
+                    </div>
+                    {{-- <div class="banner"
+                        style="
+                            position: absolute; /*! width: -webkit-calc(100% - 260px); */ /*! width: -moz-calc(100% - 260px); */
+                            width: calc(100% - 534px); /*! height: -webkit-calc(100% - 260px); */ /*! height: -moz-calc(100% - 260px); */
+                            height: calc(100% - 65px);
+                            top: 5%;
+                            right: 130px;
+                            bottom: 130px;
+                            left: 286px !important;
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+                            z-index: 1;">
+                        <div class="the-square"></div>
+                    </div>
+                </div> --}}
+                
                 {{-- <div class="banner">
                     <div class="the-square"></div>
                 </div> --}}
@@ -59,8 +156,10 @@
             <!-- Language -->
             <div class="lang">
                 <ul>
-                       <li><a href="#" class="active">eng</a></li>
-                    <li><a href="#">rus</a></li>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
                 </ul>
             </div>
 
