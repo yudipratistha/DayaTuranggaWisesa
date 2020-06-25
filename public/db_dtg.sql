@@ -25,6 +25,8 @@ CREATE TABLE `abouts` (
   `about_title` varchar(255) DEFAULT NULL,
   `about_description` varchar(255) DEFAULT NULL,
   `about_foto_path` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -41,6 +43,8 @@ CREATE TABLE `contacts` (
   `contact_email` varchar(255) DEFAULT NULL,
   `contact_lat` char(20) DEFAULT NULL,
   `contact_lon` char(20) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -69,6 +73,8 @@ CREATE TABLE `porfolios` (
   `portfolio_description` varchar(255) DEFAULT NULL,
   `portfolio_tag_id` varchar(255) DEFAULT NULL,
   `portfolio_foto_path` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -83,10 +89,27 @@ CREATE TABLE `services` (
   `service_name` varchar(255) DEFAULT NULL,
   `service_description` varchar(255) DEFAULT NULL,
   `service_icon_id` bigint(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `services` */
+
+/*Table structure for table `sliders` */
+
+DROP TABLE IF EXISTS `sliders`;
+
+CREATE TABLE `sliders` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `slider_name` varchar(255) DEFAULT NULL,
+  `id_slider_moves` bigint(20) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `sliders` */
 
 /*Table structure for table `users` */
 
@@ -102,9 +125,12 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users` */
+
+insert  into `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`remember_token`,`created_at`,`updated_at`) values 
+(1,'Yudi Pratistha','pandeyudi@hotmail.com',NULL,'$2y$10$QiR3VISwwa7ut7ftYFNzyu7zUwqN6W9RtIguJhRcpNMK4sCJt8b5a',NULL,'2020-06-22 02:54:26','2020-06-22 02:54:26');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

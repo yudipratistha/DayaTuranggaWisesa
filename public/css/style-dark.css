@@ -2883,6 +2883,9 @@ background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rg
 		14. Responsible Css
 --------------------------------- */
 @media screen and (max-width: 991px) {
+	.pt-home .banner{
+		transform: translateX(17%) translateY(16%) !important;
+	}
 	.pt-home .banner h1 {
     	font-size: 60px;
 	}
@@ -2987,7 +2990,10 @@ background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rg
 		font-size: 23px;
 	}
 	.pt-home .banner {
-		width: 100%;
+		width: calc(100% - 190px);
+	}
+	.pt-home .square {
+		width: calc(100% - 190px);
 	}
 	.pt-home .banner h1 {
 		font-size: 40px;
