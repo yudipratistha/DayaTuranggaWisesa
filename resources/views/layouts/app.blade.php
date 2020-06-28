@@ -28,7 +28,14 @@
 		<link rel="stylesheet" class="box-tl" href="{{asset('css/settings/title/title.css')}}">
 		<link rel="stylesheet" class="style-cl" href="{{asset('css/settings/color/green-color.css')}}" />
 
-		<link rel="stylesheet" href="{{asset('setting/style-demo.css')}}">
+        <link rel="stylesheet" href="{{asset('setting/style-demo.css')}}">
+        <style>
+    .isotope-pager .pager {
+        display: inline-block;
+        z-index: 1000;
+    }
+
+    </style>
     </head>
 <body>
     <div id="app">

@@ -682,8 +682,9 @@ blockquote span img {
 
 .page {
 	position: fixed;
-	width: calc(90% + 2px);
+	width: calc(100vw - 128px);
 	height: 100%;
+	/* right: calc(20% - 128px); */
 	color: #fff;
 	margin: 0;
 	padding: 0;
@@ -901,7 +902,7 @@ blockquote:before,
 
 .header-main {
 	position: fixed;
-	width: 10%;
+	width: 128px;
 	height: 100%;
     top: 0;
 	overflow: auto;
@@ -1056,9 +1057,7 @@ blockquote:before,
 /* Social */
 .pt-home .social {
 	position: absolute;
-	width: 40px;
-	height: 120px;
-	top: 20px;
+	bottom: 30px;
 	z-index: 1;
 }
 

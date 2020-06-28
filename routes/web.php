@@ -23,7 +23,9 @@ Route::group(['prefix' => 'admin-dtg', 'middleware' => 'auth'], function () {
 Route::get('/', function () {
     return view('view.home');
 });
-
+Route::get('/test', function () {
+    return view('home');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

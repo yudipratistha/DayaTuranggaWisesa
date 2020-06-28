@@ -63,25 +63,123 @@ $(window).on('load', function() {
 	----------------------------------- */
     if( $('.portfolio-items').length ) {
         var $elements = $(".portfolio-items"),
-            $filters = $('.portfolio-filter ul li');
-        $elements.isotope();
+        $filters = $('.portfolio-filter ul li');
+        $($filters[1]).attr("class", "active")
+        var itemSelector = $('.portfolio-filter ul li').data('filter');
+        var $container = $elements.isotope({filter: itemSelector});
+        
+        //Ascending order
+	var responsiveIsotope = [
+		[480, 4],
+		[720, 6]
+	];
+        var itemsPerPageDefault = 6;
+        var itemsPerPage = defineItemsPerPage();
+        var currentNumberPages = 1;
+        var currentPage = 1;
+        var currentFilter = 'brand';
+        var filterAtribute = 'data-filter';
+        var pageAtribute = 'data-page';
+        var pagerClass = 'isotope-pager';
+
+        function changeFilter(selector) {
+            console.log(selector)
+            $container.isotope({
+                filter: selector
+            });
+        }
+        function goToPage(n) {
+            currentPage = n;
+                var selector = ( currentFilter != '*' ) ? '['+filterAtribute+'="'+currentFilter+'"]' : '';
+                selector += '['+pageAtribute+'="'+currentPage+'"]';
+            changeFilter(selector);
+            
+        }
+
+        function defineItemsPerPage() {
+            var pages = itemsPerPageDefault;
+
+            for( var i = 0; i < responsiveIsotope.length; i++ ) {
+                if( $(window).width() <= responsiveIsotope[i][0] ) {
+                    pages = responsiveIsotope[i][1];
+                    break;
+                }
+            }
+            console.log(pages)
+            return pages;
+        }
+        
+        function setPagination() {
+
+            var SettingsPagesOnItems = function(){
+
+                var itemsLength = $container.children(itemSelector).length;
+                
+                var pages = Math.ceil(itemsLength / itemsPerPage);
+                var item = 1;
+                var page = 1;
+                var selector = itemSelector;
+                    selector += ( currentFilter != '*' ) ? '['+filterAtribute+'="'+currentFilter+'"]' : '';
+                
+                $container.children(selector).each(function(){
+                    if( item > itemsPerPage ) {
+                        page++;
+                        item = 1;
+                    }
+                    $(this).attr(pageAtribute, page);
+                    item++;
+                });
+
+                currentNumberPages = page;
+
+            }();
+
+            var CreatePagers = function() {
+
+                var $isotopePager = ( $('.'+pagerClass).length == 0 ) ? $('<div class="'+pagerClass+'"></div>') : $('.'+pagerClass);
+
+                $isotopePager.html('');
+                
+                for( var i = 0; i < currentNumberPages; i++ ) {
+                    var $pager = $('<a href="javascript:void(0);" class="pager" '+pageAtribute+'="'+(i+1)+'"></a>');
+                        $pager.html(i+1);
+                        
+                        $pager.click(function(){
+                            var page = $(this).eq(0).attr(pageAtribute);
+                            goToPage(page);
+                        });
+
+                    $pager.appendTo($isotopePager);
+                }
+
+                $container.after($isotopePager);
+
+            }();
+
+        }
+
+        setPagination();
+        goToPage(1);
 
         $filters.on('click', function(){
             $filters.removeClass('active');
             $(this).addClass('active');
             var selector = $(this).data('filter');
-            $(".portfolio-items").isotope({
-                filter: selector,
-                hiddenStyle: {
-                    transform: 'scale(.2) skew(30deg)',
-                    opacity: 0
-                },
-                visibleStyle: {
-                    transform: 'scale(1) skew(0deg)',
-                    opacity: 1,
-                },
-                transitionDuration: '.5s'
-            });
+            currentFilter = selector;
+            // $(".portfolio-items").isotope({
+            //     filter: selector,
+            //     hiddenStyle: {
+            //         transform: 'scale(.2) skew(30deg)',
+            //         opacity: 0
+            //     },
+            //     visibleStyle: {
+            //         transform: 'scale(1) skew(0deg)',
+            //         opacity: 1,
+            //     },
+            //     transitionDuration: '.5s'
+            // });
+            setPagination();
+		    goToPage(1);
         });
     }
 	

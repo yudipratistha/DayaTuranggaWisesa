@@ -62,30 +62,6 @@
         </div>
 
          <section>
-            <!-- Banner -->
-            {{-- <div class="banner">
-                  <h1>Alex Smith</h1>
-                <p class="cd-headline rotate-1">
-                    <span>I am a</span>
-                    <span class="cd-words-wrapper">
-                        <b class="is-visible">Developer</b>
-                        <b>Photographer</b>
-                        <b>Designer</b>
-                        <b>Freelancer</b>
-                    </span>
-                </p>
-            </div> --}}
-
-            <!-- Language -->
-            <div class="lang">
-                <ul>
-                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                </ul>
-            </div>
-
             <!-- Social -->
             <div class="social">
                 <ul>
@@ -125,46 +101,8 @@
                                 <div class="loc">
                                     <i class="fas fa-map-marked-alt"></i> Denpasar, Bali, Indonesia
                                 </div>
-                                <p>Hello! I’m Alex Smith a self-taught & award winning Digital Designer & Developer with over five years  work experience. I started in my children’s room, got pro at renowned digital agencies akij co and nork blue lebel. Now I’m based in USA, America, working for Apple fredmansky and enjoying the life in the countryside.
+                                <p>PT. Daya Turangga Wisesa provides Information Technology, Electrical, Building Construction and plumbing services.
                                 </p>
-                                <p>I have couple of hobbies but I like to travel. I have already travelled almost all the districts of our country with my father. I am fond of fruit.
-                                </p>
-                            </div>
-
-                            <!-- Icon Info -->
-                            <div class="col-lg-3 col-sm-4">
-                                <div class="info-icon">
-                                     <i class="fas fa-award"></i>
-                                     <div class="desc-icon">
-                                        <h6>8 Years Job</h6>
-                                        <p>Experience</p>
-                                       </div>
-                                </div>
-                            </div>
-
-                            <!-- Icon Info -->
-                            <div class="col-lg-3 col-sm-4">
-                                <div class="info-icon">
-                                     <i class="fas fa-certificate"></i>
-                                     <div class="desc-icon">
-                                        <h6>500+ Projects</h6>
-                                        <p>Completed</p>
-                                      </div>
-                                </div>
-                            </div>
-
-                            <!-- Icon Info -->
-                            <div class="col-lg-3 col-sm-4">
-                                <div class="info-icon">
-                                     <i class="fas fa-user-astronaut"></i>
-                                     <div class="desc-icon">
-                                        <h6>Freelance</h6>
-                                           <p>Available</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-12 pt-50">
-                                <a href="#" class="btn-st">Download CV</a>
                             </div>
                         </div>
                     </div>
@@ -234,19 +172,18 @@
             <div class="row mt-100">
                 <div class="col-lg-12 col-sm-12 portfolio-filter">
                     <ul>
-                        <li class="active" data-filter="*">All</li>
-                        <li data-filter=".brand">Brand</li>
-                        <li data-filter=".design">Design</li>
-                        <li data-filter=".graphic">Graphic</li>
+                        <li data-filter="*">All</li>
+                        <li data-filter="brand">Brand</li>
+                        <li data-filter="design">Design</li>
+                        <li data-filter="graphic">Graphic</li>
                     </ul>
                 </div>
             </div>
 
             <!-- Portfolio Item Row Start -->
             <div class="row portfolio-items mt-100 mb-100">
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic">
+                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
                     <figure>
                         <img alt="" src="{{asset('img/slider/8.jpg')}}">
                         <figcaption>
@@ -258,7 +195,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic">
+                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
                         <figcaption>
@@ -270,7 +207,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic">
+                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
                         <figcaption>
@@ -282,7 +219,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic">
+                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
                         <figcaption>
@@ -294,7 +231,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic">
+                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
                         <figcaption>
@@ -306,7 +243,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic">
+                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
                         <figcaption>
@@ -318,7 +255,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic">
+                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
                         <figcaption>
@@ -330,7 +267,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic">
+                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
                         <figcaption>
@@ -342,7 +279,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic">
+                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
                         <figcaption>
@@ -354,7 +291,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 design">
+                <div class="item col-lg-4 col-sm-6 design" data-filter="design">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-2.jpg')}}">
                             <figcaption>
@@ -366,7 +303,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 brand">
+                <div class="item col-lg-4 col-sm-6" data-filter="graphic">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-3.jpg')}}">
                         <figcaption>
@@ -378,7 +315,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic">
+                <div class="item col-lg-4 col-sm-6 graphic" data-filter="design">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-4.jpg')}}">
                         <figcaption>
@@ -390,7 +327,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 design">
+                <div class="item col-lg-4 col-sm-6 design" data-filter="design">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-5.jpg')}}">
                         <figcaption>
@@ -402,7 +339,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 brand">
+                <div class="item col-lg-4 col-sm-6 brand" data-filter="brand">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-6.jpg')}}">
                         <figcaption>
@@ -414,7 +351,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic">
+                <div class="item col-lg-4 col-sm-6 " data-filter="brand">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-7.jpg')}}">
                         <figcaption>
@@ -426,7 +363,7 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 design">
+                <div class="item col-lg-4 col-sm-6" data-filter="brand">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/img-8.jpg')}}">
                         <figcaption>
@@ -438,9 +375,9 @@
                 </div>
 
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 brand">
+                <div class="item col-lg-4 col-sm-6 brand" data-filter="graphic">
                     <figure>
-                        <img alt="" src="img/portfolio/img-9.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/img-9.jpg')}}">
                         <figcaption>
                             <h3>Project Name</h3>
                             <p>Graphic</p><i class="fas fa-image"></i>
@@ -623,6 +560,12 @@
                     <div class="col-lg-12">
                         {{-- <div id="map" data-latitude="40.712775" data-longitude="-74.005973" data-zoom="14"></div> --}}
                         <div id="mapid"></div>
+                        <input type="hidden" id="pt-name" value="PT. Daya Turangga Wisesa">
+                        <input type="hidden" id="pt-telephone" value="+62361499093">
+                        <input type="hidden" id="pt-fax" value="+62361483586">
+                        <input type="hidden" id="pt-address" value="Jl. Gunung Soputan No.28. Kel. Pemecutan Kelod Kecamatan Denpasar Barat Denpasar Bali.">
+                        <input type="hidden" id="pt-lat" value="-8.688396">
+                        <input type="hidden" id="pt-lng" value="115.189303">
                     </div>
                 </div>
             </div>

@@ -17,7 +17,28 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    {{-- <link rel="stylesheet" href="{{asset('css/plugins/bootstrap.min.css')}}"> --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+            #container {
+    margin: auto;
+    }
+
+    .grid-item {
+    display: inline-block;
+    height: 250px;
+    margin: 5px;
+    overflow: hidden;
+    text-align: center;
+    width: 250px;
+    }
+
+    .isotope-pager .pager {
+        display: inline-block;
+        z-index: 1000;
+    }
+
+    </style>
 </head>
 <body>
     <div id="app">
@@ -76,5 +97,8 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('js/isotopepagination.js')}}"></script>
 </body>
 </html>
