@@ -1,33 +1,3 @@
-/* -----------------------------------------------
-				CSS Styles Dark
---------------------------------------------------
-
-    Template Name: Baha - Personal Portfolio Template
-    Author: Malyarchuk
-    Copyright: 2019
-
---------------------------------------------------
-
-Table of Content
-
-	1. Body and Core Css
-	2. Section Css
-	3. Menu Css
-	4. Home Section
-	5. About Section
-	6. resum Section
-	7. Portfolio Section
-	8. Blog Section
-	9. Contact Section
-	10. Blog Page Css
-	11. Blog List Css
-	12. Preloader Css
-	13. Tooltip Css
-	14. Responsible Css
-	15. Animation Css
-
------------------------------------ */
-
 /* -----------------------------------
 		1. Body and Core Css
 ----------------------------------- */
@@ -1021,7 +991,6 @@ blockquote:before,
 
 .pt-home .banner {
 	position: absolute;
-	/* width: 80%; */
 	color: #fff;
 	width: -webkit-calc(100% - 260px);
 	width: -moz-calc(100% - 260px);
@@ -1031,13 +1000,10 @@ blockquote:before,
 	height: calc(100% - 263px);
 	right: 130px;
 	bottom: 130px;
-	left: 312px !important;
+	left: 248px !important;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-    /* text-align: center; */
-	/* -webkit-transform: translateY(-27%);
-			transform: translateY(-27%); */
 	-webkit-transform: translateX(9%) translateY(18%);
 	transform: translateX(9%) translateY(18%);
 	z-index: 3;
@@ -1092,7 +1058,7 @@ blockquote:before,
 	height: calc(100% - 261px);
 	right: 130px;
 	bottom: 130px;
-	left: 286px !important;
+	left: 228px !important;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -1449,228 +1415,6 @@ blockquote:before,
 }
 
 /* ---------------------------------
-		6. resum Section
---------------------------------- */
-/* Experience */
-.pt-resum .experience .item {
-	position: relative;
-	padding-top: 15px;
-	padding-left: 40px;
-	margin-bottom: 40px;
-}
-
-.pt-resum .experience .item:before {
-	content: '';
-	position: absolute;
-	width: 1px;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: #fff;
-}
-
-.pt-resum .experience .item:after {
-	content: '';
-	position: absolute;
-	width: 20px;
-	height: 1px;
-	top: 21px;
-	left: 6px;
-	background-color: #fff;
-}
-
-.pt-resum .experience .main p {
-	color: #fff;
-	font-size: 12px;
-}
-
-.pt-resum .experience .main p i {
-    font-size: 13px;
-    margin-right: 5px;
-}
-
-.pt-resum .experience .main h4 {
-	position: relative;
-	line-height: 15px;
-	margin-bottom: 15px;
-}
-
-.pt-resum .experience .main h4:before {
-	content: '';
-	position: absolute;
-	width: 13px;
-	height: 13px;
-	left: -46px;
-	background-color: #0e0f10;
-	border: 2px solid #fff;
-	-webkit-border-radius: 50%;
-			border-radius: 50%;
-	z-index: 1;
-}
-
-.pt-resum .experience .item:hover h4:before {
-	background-color: #fff;
-	-webkit-transition: all .3s;
-			transition: all .3s;
-}
-
-/* Skills Bar */
-.pt-resum .skill-item {
-    padding: 0 20px;
-}
-
-.pt-resum .skill-item .progress-title {
-	font-size: 17px;
-	margin-bottom: 10px;
-}
-
-.pt-resum .skill-item .progress {
-	height: 8px;
-	background-color: #0e0f10;
-	margin-bottom: 40px;
-	overflow: visible;
-}
-
-.pt-resum .skill-item .progress .progress-bar {
-    position: relative;
-    background-color: #fff;
-    -webkit-border-radius: 10px;
-    		border-radius: 10px;
-}
-
-.pt-resum .skill-item .progress .progress-bar:after {
-    content: '';
-    position: absolute;
-	display: block;
-    top: -5px;
-    right: 0px;
-    padding: 6px;
-    background-color: #0e0f10;
-    -webkit-border-radius: 50%;
-    		border-radius: 50%;
-    border: 3px solid #fff;
-}
-
-.pt-resum .skill-item .progress .progress-value {
-    position: absolute;
-    top: -30px;
-    right: 0;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.pt-resum .chart {
-	width: 130px;
-	height: 130px;
-	margin: 0 auto 25px;
-	text-align: center;
-	font-size: 25px;
-	line-height: 24px;
-	padding: 40px 0 0;
-	color: #eee;
-	font-weight: 800;
-}
-
-.pt-resum .chart p {
-	font-size: 15px;
-	margin-top: 10px;
-}
-
-.pt-resum canvas {
-	position: absolute;
-	top: 3px;
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-			transform: translateX(-50%);
-}
-
-/* Work Process */
-.pt-resum .work-process .ltr {
-	text-align: right;
-}
-
-.pt-resum .work-process .rtl {
-	text-align: left;
-}
-
-.pt-resum .work-process .wp-step {
-	margin: 0;
-	color: #fff;
-    font-size: 25px;
-	line-height: 50px;
-}
-
-.pt-resum .work-process h4 {
-	font-weight: 700;
-	margin-bottom: 15px;
-}
-
-.pt-resum .work-process .single-wp + .single-wp {
-	padding-top: 35px;
-}
-
-.pt-resum .work-process .wp-circle {
-	position: relative;
-	width: 100%;
-	padding: 80px 0;
-	margin-top: 12px;
-	text-align: center;
-	-webkit-border-radius: 50%;
-			border-radius: 50%;
-	border: 1px solid #fff;
-}
-
-.pt-resum .work-process .wp-circle:before {
-	content: '';
-	position: absolute;
-	width: calc(100% + 48px);
-	height: calc(100% + 48px);
-	top: -24px;
-	left: -24px;
-	border: 1px solid #fff;
-	-webkit-border-radius: 50%;
-			border-radius: 50%;
-}
-
-.pt-resum .work-process .wp-circle h4 {
-	font-size: 40px;
-	font-weight: 700;
-	line-height: 62px;
-	text-transform: uppercase;
-}
-
-.pt-resum .work-process .dots {
-	position: absolute;
-	width: 12px;
-	height: 12px;
-	display: inline-block;
-	-webkit-border-radius: 50%;
-			border-radius: 50%;
-	background-color: #fff;
-}
-
-.pt-resum .work-process .dots.top-l,
-.pt-resum .work-process .dots.bottom-l {
-	left: 0px;
-}
-
-.pt-resum .work-process .dots.top-l,
-.pt-resum .work-process .dots.top-r {
-	top: 50px;
-}
-
-.pt-resum .work-process .dots.bottom-l,
-.pt-resum .work-process .dots.bottom-r {
-	bottom: 50px;
-}
-
-.pt-resum .work-process .dots.top-r,
-.pt-resum .work-process .dots.bottom-r {
-	right: 0px;
-}
-
-/* ---------------------------------
 		7. Portfolio Section
 --------------------------------- */
 /* Portfolio Filter */
@@ -1807,6 +1551,28 @@ blockquote:before,
 	opacity: 1;
 	-webkit-transform: translateX(0%);
 			transform: translateX(0%);
+}
+
+.isotope-pager .pager{
+	display: inline-block;
+	z-index: 1000;
+	display: block;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	margin-top: 4.5px;
+	margin-bottom: 100px;
+	border-radius: 50%;
+	/* background-color: #eeeeee; */
+	left: 10px;
+	text-align: center;
+	position: relative;
+	border: 121px;
+}
+
+.isotope-pager .pager-active{
+	background-color: #eeeeee;
+	color: #333333 !important;
 }
 
 /* ---------------------------------
@@ -2826,7 +2592,7 @@ height: calc(100% - 260px);
 top: 130px;
 right: 130px;
 bottom: 130px;
-left: 266px;
+left: 241px;
 -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
         box-sizing: border-box;

@@ -1,63 +1,10 @@
-/* -----------------------------------------------
-					Js Main
---------------------------------------------------
-
-    Template Name: Baha - Personal Portfolio Template
-    Author: Malyarchuk
-    Copyright: 2019
-
---------------------------------------------------
-
-Table of Content
-
-	1. Preloader
-	2. Sound Start
-	3. Isotope Portfolio Setup
-	4. Blogs Masonry Setup
-	5. Active Current Link
-	6. Mobile Toggle Click Setup
-	7. Testimonials OwlCarousel
-	8. Chart Setup
-	9. Portfolio Tilt Setup
-	10. Portfolio Image Link
-	11. Portfolio Video Link
-	12. Blog Video Link
-	13. Validate Contact Form
-	14. Google Map
-
------------------------------------ */
-
 $(window).on('load', function() {
 		
 	/* -----------------------------------
 				1. Preloader
 	----------------------------------- */
 	$("#preloader").delay(1000).addClass('loaded');
-	
-	/* -----------------------------------
-			  2. Sound Setup
-	----------------------------------- */
-	$('body').append('<audio loop autoplay volume="1" id="audio-player"><source src="music.mp3" type="audio/mpeg"></audio>');
-    	var audio = document.getElementById("audio-player");
-    	audio.volume = 0.2;
-	
-	if($(window).length) {
-		$('.music-bg').css({'visibility':'visible'});
-		$('body').addClass("audio-on");
-		if ($('body').hasClass('audio-off')) {
-        	$('body').removeClass('audio-on');
-		} 
-		$(".music-bg").on('click', function() {
-			$('body').toggleClass("audio-on audio-off");         
-			if ($('body').hasClass('audio-off')) {
-				audio.pause();
-			} 
-			if ($('body').hasClass('audio-on')) {
-				audio.play();
-			}
-		});
-	}
-	
+
 	/* -----------------------------------
 			3. Isotope Portfolio Setup
 	----------------------------------- */
@@ -77,7 +24,7 @@ $(window).on('load', function() {
         var itemsPerPage = defineItemsPerPage();
         var currentNumberPages = 1;
         var currentPage = 1;
-        var currentFilter = 'brand';
+        var currentFilter = 'building-construction';
         var filterAtribute = 'data-filter';
         var pageAtribute = 'data-page';
         var pagerClass = 'isotope-pager';
@@ -126,6 +73,7 @@ $(window).on('load', function() {
                         page++;
                         item = 1;
                     }
+                    
                     $(this).attr(pageAtribute, page);
                     item++;
                 });
@@ -143,10 +91,13 @@ $(window).on('load', function() {
                 for( var i = 0; i < currentNumberPages; i++ ) {
                     var $pager = $('<a href="javascript:void(0);" class="pager" '+pageAtribute+'="'+(i+1)+'"></a>');
                         $pager.html(i+1);
-                        
+                        if(i==0) $pager.addClass('pager-active')
                         $pager.click(function(){
                             var page = $(this).eq(0).attr(pageAtribute);
+                            $isotopePager.find('.pager-active').removeClass('pager-active')
+                            $(this).eq(0).addClass('pager-active')
                             goToPage(page);
+                            
                         });
 
                     $pager.appendTo($isotopePager);
@@ -266,7 +217,7 @@ $(document).ready(function() {
 	      10. Portfolio Image Link
 	----------------------------------- */
 	$(".portfolio-items .image-link").magnificPopup({
-		type: "image"
+        type: "image"
 	});
 	
 	/* -----------------------------------

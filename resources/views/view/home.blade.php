@@ -10,54 +10,28 @@
                 <div id="slides">
                     <div class="slide">
                     <span class="animate down" style="background-image: url(../img/slider/8.jpg)"></span>
-                    <div class="banner"><h1>Subtle Slideshow With Ken Burns</h1></div>
+                    <div class="banner"><h1>Testing Slideshow With Photo 1</h1></div>
                     </div>
                     <div class="slide">
                     <span class="animate in" style="background-image: url(../img/slider/10.jpeg)"></span>
-                    <div class="banner"><h1>Subtle Slideshow With Ken Burns z</h1></div>
+                    <div class="banner"><h1>Testing Slideshow With Photo 2</h1></div>
                     </div>
                     <div class="slide">
                     <span class="animate down" style="background-image: url(../img/slider/15.jpg)"></span>
-                    <div class="banner"><h1>Subtle Slideshow With Ken Burns x</h1></div>
+                    <div class="banner"><h1>Testing Slideshow With Photo 3</h1></div>
                     </div>
                     <div class="slide">
                     <span class="animate out" style="background-image: url(../img/slider/16.jpg)"></span>
-                    <div class="banner"><h1>Subtle Slideshow With Ken Burns s</h1></div>
+                    <div class="banner"><h1>Testing Slideshow With Photo 4</h1></div>
                     </div>
                     <div class="slide">
                     <span class="animate right" style="background-image: url(../img/slider/17.jpeg)"></span>
-                    <div class="banner"><h1>Subtle Slideshow With Ken Burns Effect</h1></div>
+                    <div class="banner"><h1>Testing Slideshow With Photo 5</h1></div>
                     </div>
                 </div>
                 <div class="square">
                     <div class="the-square"></div>
                 </div>
-                {{-- <div class="slide">
-                    <span class="animate down" style="background-image: url(../img/slider/8.jpg);"></span>
-                    <div class="banner">
-                        <h1>Subtle Slideshow With Ken Burns asdasw</h1>
-                    </div>
-                    <div class="banner"
-                        style="
-                            position: absolute; /*! width: -webkit-calc(100% - 260px); */ /*! width: -moz-calc(100% - 260px); */
-                            width: calc(100% - 534px); /*! height: -webkit-calc(100% - 260px); */ /*! height: -moz-calc(100% - 260px); */
-                            height: calc(100% - 65px);
-                            top: 5%;
-                            right: 130px;
-                            bottom: 130px;
-                            left: 286px !important;
-                            -webkit-box-sizing: border-box;
-                            -moz-box-sizing: border-box;
-                            box-sizing: border-box;
-                            z-index: 1;">
-                        <div class="the-square"></div>
-                    </div>
-                </div> --}}
-                
-                {{-- <div class="banner">
-                    <div class="the-square"></div>
-                </div> --}}
-                
             </div>    
         </div>
 
@@ -173,9 +147,10 @@
                 <div class="col-lg-12 col-sm-12 portfolio-filter">
                     <ul>
                         <li data-filter="*">All</li>
-                        <li data-filter="brand">Brand</li>
-                        <li data-filter="design">Design</li>
-                        <li data-filter="graphic">Graphic</li>
+                        <li data-filter="building-construction">Building Construction</li>
+                        <li data-filter="electrical">Electrical</li>
+                        <li data-filter="information-technology">Information Technology</li>
+                        <li data-filter="plumbing">Plumbing</li>
                     </ul>
                 </div>
             </div>
@@ -183,205 +158,178 @@
             <!-- Portfolio Item Row Start -->
             <div class="row portfolio-items mt-100 mb-100">
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
+                <div class="item col-lg-4 col-sm-6" data-filter="building-construction">
                     <figure>
-                        <img alt="" src="{{asset('img/slider/8.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/construction - Marka Runway.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Graphic</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/slider/8.jpg')}}"></a>
+                            <h3>Marka Runway</h3>
+                            <p>Building Construction</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/construction - Marka Runway.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
+                <div class="item col-lg-4 col-sm-6" data-filter="building-construction">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/construction - Steel Canopy.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Graphic</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/portfolio/img-1.jpg')}}"></a>
+                            <h3>Steel Canopy</h3>
+                            <p>Building Construction</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/construction - Steel Canopy.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
+                <div class="item col-lg-4 col-sm-6" data-filter="building-construction">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/construction - Steel Construction.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Graphic</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/portfolio/img-1.jpg')}}"></a>
+                            <h3>Steel Construction</h3>
+                            <p>Building Construction</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/construction - Steel Construction.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
+                <div class="item col-lg-4 col-sm-6" data-filter="building-construction">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/construction - Steel Construction2.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Graphic</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/portfolio/img-1.jpg')}}"></a>
+                            <h3>Steel Construction</h3>
+                            <p>Building Construction</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/construction - Steel Construction2.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
+                <div class="item col-lg-4 col-sm-6" data-filter="electrical">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/electrical - MV Panel.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Graphic</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/portfolio/img-1.jpg')}}"></a>
+                            <h3>MV Panel</h3>
+                            <p>Electrical</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/electrical - MV Panel.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
+                <div class="item col-lg-4 col-sm-6" data-filter="electrical">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/electrical - Outdoor Installation.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Graphic</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/portfolio/img-1.jpg')}}"></a>
+                            <h3>Outdoor Installation</h3>
+                            <p>Electrical</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/electrical - Outdoor Installation.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
+                <div class="item col-lg-4 col-sm-6" data-filter="electrical">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/electrical - Power Transformer and Test Insullation.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Graphic</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/portfolio/img-1.jpg')}}"></a>
+                            <h3>Power Transformer and Test Insullation</h3>
+                            <p>Electrical</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/Power Transformer and Test Insullation.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
+                <div class="item col-lg-4 col-sm-6" data-filter="electrical">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/electrical -LV Power Panel.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Graphic</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/portfolio/img-1.jpg')}}"></a>
+                            <h3>LV Power Panel</h3>
+                            <p>Electrical</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/electrical -LV Power Panel.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic" data-filter="graphic">
+                <div class="item col-lg-4 col-sm-6" data-filter="information-technology">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-1.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/it - Controller Solar Cell.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Graphic</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/portfolio/img-1.jpg')}}"></a>
+                            <h3>Controller Solar Cell</h3>
+                            <p>Information Technology</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/it - Controller Solar Cell.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 design" data-filter="design">
+                <div class="item col-lg-4 col-sm-6" data-filter="information-technology">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-2.jpg')}}">
-                            <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Design</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/portfolio/img-2.jpg')}}"></a>
+                        <img alt="" src="{{asset('img/portfolio/it - Inverter.jpg')}}">
+                        <figcaption>
+                            <h3>Inverter</h3>
+                            <p>Information Technology</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/it - Inverter.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6" data-filter="graphic">
+                <div class="item col-lg-4 col-sm-6" data-filter="information-technology">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-3.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/it - LED Videotron Installation.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Graphic</p><i class="fas fa-video"></i>
-                            <a class="video-link" href="https://www.youtube.com/watch?v=k_okcNVZqqI"></a>
+                            <h3>LED Videotron Installation</h3>
+                            <p>Information Technology</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/it - LED Videotron Installation.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 graphic" data-filter="design">
+                <div class="item col-lg-4 col-sm-6" data-filter="information-technology">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-4.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/it - Test LED Videotron.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Design</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="img/portfolio/img-4.jpg')}}"></a>
+                            <h3>Test LED Videotron</h3>
+                            <p>Information Technology</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/it - Test LED Videotron.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 design" data-filter="design">
+                <div class="item col-lg-4 col-sm-6" data-filter="plumbing">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-5.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/Plumbing - Maintenance Sewage Drainage STP.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Design</p><i class="fas fa-video"></i>
-                            <a class="video-link" href="https://www.youtube.com/watch?v=k_okcNVZqqI"></a>
+                            <h3>Maintenance Sewage Drainage STP</h3>
+                            <p>Plumbing</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/Plumbing - Maintenance Sewage Drainage STP.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 brand" data-filter="brand">
+                <div class="item col-lg-4 col-sm-6" data-filter="plumbing">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-6.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/Plumbing - Plumbing and Valves Installation.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Brand</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/portfolio/img-6.jpg')}}"></a>
+                            <h3>Plumbing and Valves Installation</h3>
+                            <p>Plumbing</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/Plumbing - Plumbing and Valves Installation.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 " data-filter="brand">
+                <div class="item col-lg-4 col-sm-6" data-filter="plumbing">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-7.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/Plumbing - Power Pump Control Panel.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Brand</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/portfolio/img-7.jpg')}}"></a>
+                            <h3>Power Pump Control Panel</h3>
+                            <p>Plumbing</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/Plumbing - Power Pump Control Panel.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
-
                 <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6" data-filter="brand">
+                <div class="item col-lg-4 col-sm-6" data-filter="plumbing">
                     <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-8.jpg')}}">
+                        <img alt="" src="{{asset('img/portfolio/Plumbing - Sewage Submersible Pumps and Installation.jpg')}}">
                         <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Brand</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/portfolio/img-8.jpg')}}"></a>
-                        </figcaption>
-                    </figure>
-                </div>
-
-                <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6 brand" data-filter="graphic">
-                    <figure>
-                        <img alt="" src="{{asset('img/portfolio/img-9.jpg')}}">
-                        <figcaption>
-                            <h3>Project Name</h3>
-                            <p>Graphic</p><i class="fas fa-image"></i>
-                            <a class="image-link" href="{{asset('img/portfolio/img-9.jpg')}}"></a>
+                            <h3>Sewage Submersible Pumps and Installation</h3>
+                            <p>Plumbing</p><i class="fas fa-image"></i>
+                            <a class="image-link" href="{{asset('img/portfolio/Plumbing - Sewage Submersible Pumps and Installation.jpg')}}"></a>
                         </figcaption>
                     </figure>
                 </div>
