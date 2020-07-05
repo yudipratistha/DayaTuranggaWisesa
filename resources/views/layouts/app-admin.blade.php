@@ -11,13 +11,12 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <title>Material pro admin Template - The Ultimate Multipurpose admin template</title>
-    <link rel="canonical" href="https://www.wrappixel.com/templates/xtremeadmin/" />
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="../../dist/js/pages/chartist/chartist-init.css" rel="stylesheet">
     <link href="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
     <link href="../assets/libs/c3/c3.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <link href="{{asset('css/style.min.css')}} rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -214,3 +213,8 @@
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
+
+        @yield('content')
+
+        
+        <script src="{{asset('js/jquery.min.js')}}"></script>
