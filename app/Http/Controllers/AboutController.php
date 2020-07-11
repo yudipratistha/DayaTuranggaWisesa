@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\About;
+use App\Service;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -23,7 +25,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('admin.about.about');
+        $about = About::all();
+        return view('admin.about.about', compact('about'));
     }
 
     /**

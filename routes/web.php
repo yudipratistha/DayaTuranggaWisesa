@@ -28,41 +28,59 @@ Route::group(['prefix' => 'admin-dtw'], function(){
 
     Route::group(['prefix' => 'slider', 'middleware' => 'auth'], function () {
         Route::get('/', 'SliderController@index')->name('admin.slider.index');
-        Route::get('/slider-create', 'SliderController@store')->name('admin.slider.create');
-        Route::get('/slider-edit', 'SliderController@edit')->name('admin.slider.edit');
-        Route::get('/slider-update', 'SliderController@update')->name('admin.slider.update');
-        Route::delete('/slider-delete', 'SliderController@delete')->name('admin.slider.delete');
+        Route::post('/slider-create', 'SliderController@store')->name('admin.slider.create');
+        Route::get('/slider-edit/edit/{id}', 'SliderController@edit')->name('admin.slider.edit');
+        Route::post('/slider-update/{id}', 'SliderController@update')->name('admin.slider.update');
+        Route::delete('/slider-delete/{id}', 'SliderController@destroy')->name('admin.slider.destroy');
     });
 
     Route::group(['prefix' => 'about', 'middleware' => 'auth'], function () {
-        Route::get('/', 'SliderController@index')->name('admin.about.index');
-        Route::get('/about-create', 'SliderController@store')->name('admin.about.create');
-        Route::get('/about-edit', 'SliderController@edit')->name('admin.about.edit');
-        Route::get('/about-update', 'SliderController@update')->name('admin.about.update');
-        Route::delete('/about-delete', 'SliderController@delete')->name('admin.about.delete');
+        Route::get('/', 'AboutController@index')->name('admin.about.index');
+        Route::get('/about-create', 'AboutController@store')->name('admin.about.create');
+        Route::get('/about-edit', 'AboutController@edit')->name('admin.about.edit');
+        Route::get('/about-update', 'AboutController@update')->name('admin.about.update');
+        Route::delete('/about-delete', 'AboutController@delete')->name('admin.about.delete');
     });
 
-    Route::group(['prefix' => 'porfolio', 'middleware' => 'auth'], function () {
-        Route::get('/', 'SliderController@index')->name('admin.porfolio.index');
-        Route::get('/porfolio-create', 'SliderController@store')->name('admin.porfolio.create');
-        Route::get('/porfolio-edit', 'SliderController@edit')->name('admin.porfolio.edit');
-        Route::get('/porfolio-update', 'SliderController@update')->name('admin.porfolio.update');
-        Route::delete('/porfolio-delete', 'SliderController@delete')->name('admin.porfolio.delete');
+    Route::group(['prefix' => 'service', 'middleware' => 'auth'], function () {
+        Route::get('/', 'ServiceController@index')->name('admin.service.index');
+        Route::post('/service-create', 'ServiceController@store')->name('admin.service.create');
+        Route::get('/service-edit/{id}', 'ServiceController@edit')->name('admin.service.edit');
+        Route::post('/service-update/{id}', 'ServiceController@update')->name('admin.service.update');
+        Route::delete('/service-delete', 'ServiceController@destroy')->name('admin.service.destroy');
+    });
+
+    Route::group(['prefix' => 'portfolio', 'middleware' => 'auth'], function () {
+        Route::get('/', 'PortfolioController@index')->name('admin.portfolio.index');
+        Route::post('/portfolio-create', 'PortfolioController@store')->name('admin.portfolio.create');
+        Route::get('/portfolio-edit/{id}', 'PortfolioController@edit')->name('admin.portfolio.edit');
+        Route::post('/portfolio-update/{id}', 'PortfolioController@update')->name('admin.portfolio.update');
+        Route::delete('/portfolio-delete/{id}', 'PortfolioController@destroy')->name('admin.portfolio.destroy');
+    });
+
+    Route::group(['prefix' => 'portfolio-tag', 'middleware' => 'auth'], function () {
+        Route::get('/', 'PortfolioTagController@index')->name('admin.portfolio-tag.index');
+        Route::post('/portfolio-tag-create', 'PortfolioTagController@store')->name('admin.portfolio-tag.create');
+        Route::get('/portfolio-tag-edit/{id}', 'PortfolioTagController@edit')->name('admin.portfolio-tag.edit');
+        Route::post('/portfolio-tag-update/{id}', 'PortfolioTagController@update')->name('admin.portfolio-tag.update');
+        Route::delete('/portfolio-tag-delete/{id}', 'PortfolioTagController@destroy')->name('admin.portfolio-tag.destroy');
     });
 
     Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function () {
-        Route::get('/', 'SliderController@index')->name('admin.contact.index');
-        Route::get('/contact-create', 'SliderController@store')->name('admin.contact.create');
-        Route::get('/contact-edit', 'SliderController@edit')->name('admin.contact.edit');
-        Route::get('/contact-update', 'SliderController@update')->name('admin.contact.update');
-        Route::delete('/contact-delete', 'SliderController@delete')->name('admin.contact.delete');
+        Route::get('/', 'ContactController@index')->name('admin.contact.index');
+        Route::get('/contact-create', 'ContactController@store')->name('admin.contact.create');
+        Route::get('/contact-edit', 'ContactController@edit')->name('admin.contact.edit');
+        Route::get('/contact-update', 'ContactController@update')->name('admin.contact.update');
+        Route::delete('/contact-delete', 'ContactController@delete')->name('admin.contact.delete');
     });
 });
 
-Route::get('/', function () {
-    return view('view.home');
-});
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index')->name('home.index');
+
+// Route::get('/', function () {
+//     return view('view.home');
+// });
+// Route::get('/home', function () {
+//     return view('home');
+// });
 

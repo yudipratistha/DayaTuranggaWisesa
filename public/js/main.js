@@ -24,7 +24,7 @@ $(window).on('load', function() {
         var itemsPerPage = defineItemsPerPage();
         var currentNumberPages = 1;
         var currentPage = 1;
-        var currentFilter = 'building-construction';
+        var currentFilter = $('#filter-portfolio').val();
         var filterAtribute = 'data-filter';
         var pageAtribute = 'data-page';
         var pagerClass = 'isotope-pager';

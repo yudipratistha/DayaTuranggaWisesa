@@ -8,7 +8,13 @@
         <div class="addition-bg">
             <div class="overlay overlay-dark-20 cover-all">
                 <div id="slides">
+                    @foreach ($sliders as $num => $slider)
                     <div class="slide">
+                        <span class="animate {{$slider->slider_animated}}" style="background-image: url(../storage/{{$slider->slider_photo_path}})"></span>
+                        <div class="banner">{!!$slider->slider_description!!}</div>
+                    </div>
+                    @endforeach
+                    {{-- <div class="slide">
                     <span class="animate down" style="background-image: url(../img/slider/8.jpg)"></span>
                     <div class="banner"><h1>Testing Slideshow With Photo 1</h1></div>
                     </div>
@@ -27,7 +33,7 @@
                     <div class="slide">
                     <span class="animate right" style="background-image: url(../img/slider/17.jpeg)"></span>
                     <div class="banner"><h1>Testing Slideshow With Photo 5</h1></div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="square">
                     <div class="the-square"></div>
@@ -92,8 +98,16 @@
                         <h3>Our Services</h3>
                     </div>
                 </div>
-
-                <!-- Service Item -->
+                @foreach ($services as $num => $service)
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="service box-1 mb-40">
+                            <i class="{{$service->service_icon}}"></i>
+                            <h4>{{$service->service_title}}</h4>
+                            {!!$service->service_description!!}
+                        </div>
+                    </div>
+                @endforeach
+                {{-- <!-- Service Item -->
                 <div class="col-lg-6 col-sm-6">
                     <div class="service box-1 mb-40">
                         <i class="fas fa-desktop"></i>
@@ -127,7 +141,7 @@
                         <h4>Plumbing</h4>
                         <p>Scope of work pumps installation, motor drive and electric machine, AC (Air Condition) installation, lift, travelator, hygienic AC for hospital, commercial AC (office, hotels, etc), water hydrant installation, water sprinkler installation, fire pumps, diesel pumps, pressurized fan and ducting.</p>
                     </div>
-                </div>
+                </div> --}}
             </div>
           </section>
      </div>
@@ -147,18 +161,32 @@
                 <div class="col-lg-12 col-sm-12 portfolio-filter">
                     <ul>
                         <li data-filter="*">All</li>
-                        <li data-filter="building-construction">Building Construction</li>
-                        <li data-filter="electrical">Electrical</li>
-                        <li data-filter="information-technology">Information Technology</li>
-                        <li data-filter="plumbing">Plumbing</li>
+                        @foreach ($portfolio_tags as $num => $portfolio_tag)
+                            @if($num == '0')
+                                <input type="hidden" id="filter-portfolio" value="{{$portfolio_tag->portfolio_tag_name}}">
+                            @endif
+                            <li data-filter="{{$portfolio_tag->portfolio_tag_name}}">{{$portfolio_tag->portfolio_tag_name}}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
 
             <!-- Portfolio Item Row Start -->
             <div class="row portfolio-items mt-100 mb-100">
-                <!-- Portfolio Item -->
-                <div class="item col-lg-4 col-sm-6" data-filter="building-construction">
+                @foreach ($portfolios as $num => $portfolio)
+                    <div class="item col-lg-4 col-sm-6" data-filter="{{$portfolio->PortfolioTag->portfolio_tag_name}}">
+                        <figure>
+                            <img alt="" src="{{'/storage/'.$portfolio->portfolio_photo_path}}">
+                            <figcaption>
+                                <h3>{{$portfolio->portfolio_name}}</h3>
+                                <p>{{$portfolio->PortfolioTag->portfolio_tag_name}}</p><i class="fas fa-image"></i>
+                                <a class="image-link" href="{{'/storage/'.$portfolio->portfolio_photo_path}}"></a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                @endforeach
+                {{-- <!-- Portfolio Item -->
+                <div class="item col-lg-4 col-sm-6" data-filter="building construction">
                     <figure>
                         <img alt="" src="{{asset('img/portfolio/construction - Marka Runway.jpg')}}">
                         <figcaption>
@@ -332,7 +360,7 @@
                             <a class="image-link" href="{{asset('img/portfolio/Plumbing - Sewage Submersible Pumps and Installation.jpg')}}"></a>
                         </figcaption>
                     </figure>
-                </div>
+                </div> --}}
             </div>
         </section>
           </div>

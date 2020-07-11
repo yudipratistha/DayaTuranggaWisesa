@@ -2,10 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Portfolio;
+use App\PortfolioTag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PortfolioController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +26,12 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        return view('admin.portfolio.portfolio');
+        $test = Portfolio::with(array('PortfolioTag'=>function($query){
+            $query->select('id','portfolio_tag_name');
+        }))->get();
+        $portfolio_tags = PortfolioTag::all();
+        $portfolios = Portfolio::all();
+        return view('admin.portfolio.portfolio', compact('portfolios', 'portfolio_tags', 'test'));
     }
 
     /**
@@ -34,7 +52,23 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $portfolio = new Portfolio();
+        $portfolio->portfolio_name = $request->portfolio_title;
+        $portfolio->portfolio_tag_id = $request->portfolio_tag;
+
+        $portfolio_extension = $request->file('portfolio_photo')->extension();
+
+        $portfolio_path = 'portfolio/';
+        Storage::disk('public')->makeDirectory($portfolio_path);
+
+        $path = $request->file('portfolio_photo')->storeAs(
+            'public/'.$portfolio_path, $request->portfolio_title.'.'.$portfolio_extension
+        );
+        $portfolio->portfolio_photo_path = $portfolio_path.$request->portfolio_title.'.'.$portfolio_extension;
+        
+        $portfolio->save();
+
+        return response()->json('success');
     }
 
     /**
@@ -56,7 +90,9 @@ class PortfolioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $portfolio = Portfolio::find($id);
+        
+        return response()->json(array('data_portfolio' => $portfolio));
     }
 
     /**
@@ -68,7 +104,29 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $portfolio = Portfolio::find($id);
+        $portfolio->portfolio_name = $request->portfolio_title_edit;
+        $portfolio->portfolio_tag_id = $request->portfolio_tag_edit;
+
+        $portfolio_photo_extension = $request->file('portfolio_photo_edit');
+
+        if(!empty($portfolio_photo_extension)){
+            $portfolio_photo_path = $portfolio->portfolio_photo_path;
+            Storage::delete('public/'.$portfolio->portfolio_photo_path);
+            $portfolio_photo_path = substr($portfolio_photo_path, 0, -10);
+            $path = $request->file('portfolio_photo_edit')->storeAs(
+                'public/'.$portfolio_photo_path, $request->portfolio_title_edit.'.jpg'
+            );
+            $portfolio->portfolio_photo_path = $portfolio_photo_path.$request->portfolio_titleedit.'.jpg';
+        }
+
+        $portfolio->save();
+
+        // $portfolio_tag = Portfolio::with(array('PortfolioTag'=>function($query){
+        //     $query->select('id','portfolio_tag_name');
+        // }))->get();
+        // return response()->json($portfolio_tag);
+        return response()->json('success');
     }
 
     /**
@@ -79,6 +137,11 @@ class PortfolioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $portfolio = Portfolio::find($id);
+        $portfolio_photo_path = substr($portfolio->portfolio_photo_path, 0, -9);
+        Storage::deleteDirectory('public/'.$portfolio_photo_path);
+        $portfolio->delete();
+
+        return response()->json('success');
     }
 }

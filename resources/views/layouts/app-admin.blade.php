@@ -11,12 +11,9 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <title>Material pro admin Template - The Ultimate Multipurpose admin template</title>
-    <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link href="../../dist/js/pages/chartist/chartist-init.css" rel="stylesheet">
-    <link href="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
-    <link href="../assets/libs/c3/c3.min.css" rel="stylesheet">
+    <link href="{{asset('assets/css/sweetalert2.css')}}" rel="stylesheet" />
     <!-- Custom CSS -->
-    <link href="{{asset('css/style.min.css')}} rel="stylesheet">
+    <link href="../../dist/css/style.min.css" rel="stylesheet">    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -110,7 +107,13 @@
                                     <li role="separator" class="dropdown-divider"></li>
                                     <li class="user-list"><a class="px-3 py-2" href="#"><i class="ti-settings"></i> Account Setting</a></li>
                                     <li role="separator" class="dropdown-divider"></li>
-                                    <li class="user-list"><a class="px-3 py-2" href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li class="user-list"><a class="px-3 py-2" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                      document.getElementById('logout-form').submit();">
+                                         <i class="fa fa-power-off"></i> Logout</a></li>
+                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
                                 </ul>
                             </div>
                         </li>
@@ -148,50 +151,36 @@
                             <i class="mdi mdi-dots-horizontal"></i>
                             <span class="hide-menu">Personal</span>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
-                                aria-expanded="false">
-                                <i class="mdi mdi-gauge"></i>
-                                <span class="hide-menu">Dashboard </span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="index.html" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Dashboard 1 </span>
-                                    </a>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href="{{route('admin.slider.index')}}" aria-expanded="false"><i class="mdi mdi-calendar"></i><span
+                                class="hide-menu">Slider</span></a>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                            href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">About</span></a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item"><a href="{{route('admin.about.index')}}" class="sidebar-link"><i
+                                            class="mdi mdi-account-box"></i> <span class="hide-menu">Company Profile
+                                        </span></a>
                                 </li>
-                                <li class="sidebar-item">
-                                    <a href="index2.html" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Dashboard 2 </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Dashboard 3 </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index4.html" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Dashboard 4 </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index5.html" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Dashboard 5 </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index6.html" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Dashboard 6 </span>
-                                    </a>
+                                <li class="sidebar-item"><a href="{{route('admin.service.index')}}" class="sidebar-link"><i
+                                            class="mdi mdi-account-network"></i><span class="hide-menu">Company Services</span></a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                            href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">Portfolio</span></a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item"><a href="{{route('admin.portfolio-tag.index')}}" class="sidebar-link"><i
+                                    class="mdi mdi-account-network"></i><span class="hide-menu">Portfolio Tags</span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="{{route('admin.portfolio.index')}}" class="sidebar-link"><i
+                                    class="mdi mdi-account-box"></i> <span class="hide-menu">Portfolio Photos</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href="{{route('admin.contact.index')}}" aria-expanded="false"><i class="mdi mdi-account-box"></i><span
+                                class="hide-menu">Contact</span></a>
                         </li>
                         
                     </ul>
@@ -206,7 +195,13 @@
                 <!-- item-->
                 <a href="#" class="link" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
                 <!-- item-->
-                <a href="#" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+                <a class="link" data-toggle="tooltip" title="Logout" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                 <i class="mdi mdi-power"></i></a>
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
             <!-- End Bottom points-->
         </aside>
@@ -215,6 +210,28 @@
         <!-- ============================================================== -->
 
         @yield('content')
-
         
         <script src="{{asset('js/jquery.min.js')}}"></script>
+        <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="{{asset('js/bootstrap.min.js')}}"></script>
+        {{-- <script src="{{asset('js/popper.min.js')}}"></script> --}}
+        <!-- apps -->
+        <script src="../../dist/js/app.min.js"></script>
+        <script src="../../dist/js/app.init.js"></script>
+        <script src="../../dist/js/app-style-switcher.js"></script>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+        <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+        <script src="{{asset('assets/js/sweetalert2.min.js')}}"></script>
+
+        <!--Wave Effects -->
+        <script src="../../dist/js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="../../dist/js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="../../dist/js/custom.min.js"></script>
+        @yield('jquery-page')
+    </body>
+
+
+    </html>

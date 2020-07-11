@@ -56,7 +56,7 @@
 
           <div class="header-mobile">
               <a class="header-toggle"><i class="fas fa-bars"></i></a>
-              <h2>DTG</h2>
+              <h2>DTW</h2>
           </div>
 
           <!-- Left Block -->

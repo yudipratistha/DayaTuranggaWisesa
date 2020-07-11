@@ -1,4 +1,5 @@
-// Create the map and set the view and some properties
+$(document).ready( function() {
+  // Create the map and set the view and some properties
 var myMap = L.map('mapid', {
   zoomControl:false
 }).setView([$('#pt-lat').val(), $('#pt-lng').val()], 17);
@@ -47,4 +48,5 @@ dataset.features.map(function(feature) {
   // add the marker and popup to the map.
   marker = L.marker(location).addTo(myMap).bindPopup(popupContent);
   marker.openPopup();
+});
 });

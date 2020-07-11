@@ -9,10 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    {{-- <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"> --}}
     <title>Monster admin Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
-    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
         <!-- ============================================================== -->
         <!-- Login box.scss -->
         <!-- ============================================================== -->
-        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url(../assets/images/background/login-register.jpg) no-repeat center center; background-size: cover;">
+        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url(../img/login.jpg) no-repeat center center; background-size: cover;">
             <div class="auth-box p-4 bg-white rounded">
                 <div id="loginform">
                     <div class="logo">
@@ -41,20 +41,33 @@
                     <!-- Form -->
                     <div class="row">
                         <div class="col-12">
-                            <form class="form-horizontal mt-3 form-material" id="loginform" action="https://www.wrappixel.com/demos/admin-templates/materialpro-bootstrap-latest/material-pro/src/material/index.html">
+                            <form class="form-horizontal mt-3 form-material" method="POST" action="{{ route('login') }}">
+                                @csrf
                                 <div class="form-group mb-3">
                                     <div class="">
-                                        <input class="form-control" type="text" required="" placeholder="Username"> </div>
+                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <div class="">
-                                        <input class="form-control" type="password" required="" placeholder="Password"> </div>
+                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group pb-1">
                                     <div class="d-flex">
                                         <div class="checkbox checkbox-info pt-0 d-flex align-items-center">
-                                            <input id="checkbox-signup" type="checkbox" class="material-inputs chk-col-indigo">
-                                            <label for="checkbox-signup"> Remember me </label>
+                                            <input id="remember" name="remember" type="checkbox" class="material-inputs chk-col-indigo" {{ old('remember') ? 'checked' : '' }}>
+                                            <label for="remember"> Remember me </label>
                                         </div> 
                                         <div class="ml-auto">
                                             <a href="javascript:void(0)" id="to-recover" class="text-muted"><i class="fa fa-lock mr-1"></i> Forgot pwd?</a>
@@ -63,20 +76,9 @@
                                 </div>
                                 <div class="form-group text-center mt-4">
                                     <div class="col-xs-12">
-                                        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Log In</button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 text-center">
-                                        <div class="social mb-3">
-                                            <a href="javascript:void(0)" class="btn  btn-facebook" data-toggle="tooltip" title="Login with Facebook"> <i aria-hidden="true" class="fab fa-facebook-f"></i> </a>
-                                            <a href="javascript:void(0)" class="btn btn-googleplus" data-toggle="tooltip" title="Login with Google"> <i aria-hidden="true" class="fab fa-google-plus"></i> </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group mb-0 mt-4">
-                                    <div class="col-sm-12 justify-content-center d-flex">
-                                        <p>Don't have an account? <a href="authentication-register1.html" class="text-info font-weight-normal ml-1">Sign Up</a></p>
+                                        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">
+                                            {{ __('Login') }}
+                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -127,10 +129,11 @@
     <!-- ============================================================== -->
     <!-- All Required js -->
     <!-- ============================================================== -->
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{asset('js/popper.min.js')}}"></script>
+
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->
