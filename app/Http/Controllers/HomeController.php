@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Slider;
+use App\About;
 use App\Service;
 use App\PortfolioTag;
 use App\Portfolio;
@@ -19,6 +20,7 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = Slider::all();
+        $about = About::paginate(1);
         $services = Service::all();
         $portfolio_tags = PortfolioTag::all();
         // $portfolios = Portfolio::all();
@@ -27,6 +29,6 @@ class HomeController extends Controller
         }))->get();
         // $sliders = Storage::disk('public')->get('slider/test2.jpeg'); 
         // return redirect($sliders);
-        return view('view.home', compact('sliders', 'services', 'portfolio_tags', 'portfolios'));
+        return view('view.home', compact('sliders', 'about', 'services', 'portfolio_tags', 'portfolios'));
     }
 }

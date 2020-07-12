@@ -32,23 +32,37 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="form-label" >Company Profile Title</label>
-                                        <input type="text" class="form-control" id="slider_name" name="slider_name" placeholder="PT. ..." value="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label" >Company Profile Location</label>
-                                        <input type="text" class="form-control" id="slider_name" name="slider_name" placeholder="Denpasar, Bali, Indonesia" value="">
-                                    </div>  
-                                    <div class="form-group" style="z-index: 1;position: relative;">
-                                        <h4 class="card-title">Company Profile Description</h4>
-                                        {{-- <div id="slider_description_edit" name="slider_description_edit" class="summernote"></div> --}}
-                                        <textarea id="slider_description_edit" name="slider_description_edit" class="summernote"></textarea>
-                                    </div>
-                                    <div class="form-group form-alert">
-                                        <label class="form-label" >Upload Photo</label>
-                                        <input type="file" value="" class="form-control input-md" name="slider_photo_edit" id="slider_phot_edito" accept="image/*">
-                                    </div> 
+                                    @if(!isset($about[0]->id))
+                                        <form id="create_about" enctype="multipart/form-data" action="" method="POST">
+                                    @else
+                                        <form id="update_about" enctype="multipart/form-data" action="" method="POST">
+                                    @endif
+                                    @csrf
+                                        <div class="form-group">
+                                            <label class="form-label" >Company Profile Title</label>
+                                            <input type="text" class="form-control" id="about_title" name="about_title" placeholder="PT. ..." value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" >Company Profile Location</label>
+                                            <input type="text" class="form-control" id="about_location" name="about_location" placeholder="Denpasar, Bali, Indonesia" value="">
+                                        </div>  
+                                        <div class="form-group" style="z-index: 1;position: relative;">
+                                            <h4 class="card-title">Company Profile Description</h4>
+                                            {{-- <div id="slider_description_edit" name="slider_description_edit" class="summernote"></div> --}}
+                                            <textarea id="about_description" name="about_description" class="summernote"></textarea>
+                                        </div>
+                                        <div class="form-group form-alert">
+                                            <label class="form-label" >Upload Photo</label>
+                                            <input type="file" value="" class="form-control input-md" name="about_photo" id="about_photo" accept="image/*">
+                                        </div> 
+                                        
+                                        @if(!isset($about[0]->id))
+                                            <button type="button" onclick="create_about()" class="btn btn-green-gradient">Save</button>
+                                        @else
+                                            <input type="hidden" id="about_id" name="about_id" value="{{$about[0]->id}}">
+                                            <button type="button" onclick="update_about()" class="btn btn-green-gradient">Save</button>
+                                        @endif
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -59,85 +73,6 @@
         <!-- ============================================================== -->
         <!-- End Container fluid  -->
         <!-- ============================================================== -->
-
-        <!-- Modal Create Service-->
-        <div class="modal fade" id="modal_create_service" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title" id="largeModalLabel">Create New Slider</h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form id="create_service" enctype="multipart/form-data" action="" method="POST">
-                        @csrf
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-12">  
-                                    <div class="form-group">
-                                        <label class="form-label">Service Title</label>
-                                        <input type="text" class="form-control" id="service_title" name="service_title" placeholder="Ex. Slider 1" >
-                                    </div>
-                                    <div class="form-group">
-                                        <h4 class="card-title">Service Description</h4>
-                                        <textarea id="service_description" name="service_description" class="summernote"><h4>Default Summernote</h4></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Service Icon</label>
-                                        <input type="text" class="form-control" id="service_title" name="service_icon" placeholder="Ex. Slider 1" >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-blue-gradient" data-dismiss="modal">Close</button>
-                            <button type="button" onclick="create_service()" class="btn btn-green-gradient">Save</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal Update Slider-->
-        <div class="modal fade" id="modal_update_service" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title" id="largeModalLabel">Create New Project</h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form id="update_service" enctype="multipart/form-data" action="" method="POST">
-                        @csrf
-                        <input type="hidden" value="" id="service_id" name="service_id">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-12">  
-                                    <div class="form-group">
-                                        <label class="form-label">Service Title</label>
-                                        <input type="text" class="form-control" id="service_title_edit" name="service_title_edit" placeholder="Ex. Slider 1" >
-                                    </div>
-                                    <div class="form-group">
-                                        <h4 class="card-title">Service Description</h4>
-                                        <textarea id="service_description_edit" name="service_description_edit" class="summernote"><h4>Default Summernote</h4></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Service Icon</label>
-                                        <input type="text" class="form-control" id="service_icon_edit" name="service_icon_edit" placeholder="Ex. Slider 1" >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-blue-gradient" data-dismiss="modal">Close</button>
-                            <button type="button" onclick="update_service()" class="btn btn-green-gradient">Save</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
         <!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
@@ -175,10 +110,31 @@
                         "bDestroy": true
                     });
                 });
+
+                 
+            });
+
+            $(window).on("load", function(){
+                if($('#about_id').length){
+                    link = "{{route('admin.about.edit', ':id')}}";
+                    link = link.replace(':id', $('#about_id').val());
+                    $.ajax({
+                        url: link,
+                        method: "GET",
+                        dataType: 'json',
+                        success: function(data){
+                            console.log(data.data_about)
+                            $('#about_title').val(data.data_about.about_title);
+                            $('#about_location').val(data.data_about.about_location);
+                            $('#about_description').summernote('code', data.data_about.about_description);
+
+                        }
+                    });   
+                } 
             });
             
-            function create_service(){
-                var service = $("#create_service").get(0)
+            function create_about(){
+                var about = $("#create_about").get(0)
                 swal.fire({
                 title: "Create Project",
                 text: "Add new data project? ",
@@ -187,14 +143,14 @@
                 confirmButtonText: "Save",
                 showLoaderOnConfirm: true,
                 preConfirm: () => {  
-                    var service = $("#create_service").get(0)
+                    var about = $("#create_about").get(0)
                     return $.ajax({
                         type: "POST", 
-                        url: "{{route('admin.service.create')}}",
+                        url: "{{route('admin.about.create')}}",
                         processData: false,
                         contentType: false,
                         cache: false,
-                        data: new FormData(service), 
+                        data: new FormData(about), 
                         success: function(data) {
                             var request = 'success';
                         },
@@ -211,51 +167,36 @@
                     });
                     }
                 })
-
             }
 
-            function get_service(service_id){
-                link = "{{route('admin.service.edit', ':id')}}";
-                link = link.replace(':id', service_id);
-                $.ajax({
-                    url: link,
-                    method: "GET",
-                    dataType: 'json',
-                    success: function(data){
-                        $('#service_id').val(data.data_service.id);
-                        $('#service_title_edit').val(data.data_service.service_title);
-                        $('#service_description_edit').summernote('code', data.data_service.service_description);
-                        $('#service_icon_edit').val(data.data_service.service_icon);
-                        $('#modal_update_service').modal('show');
-                    }
-                });
-            }
-            function update_service(){
-                var service = $("#update_service").get(0);
+            function update_about(){
+                var about = $("#update_about").get(0);
                 swal.fire({
-                title: "Update "+$('#service_title_edit').val()+"?",
+                title: "Update About?",
                 type: "warning",
                 html: '<p>Do you will to update this project?</p>',
                 showCancelButton: true,
                 confirmButtonText: "Update",
                 showLoaderOnConfirm: true,
-                preConfirm: (login) => {  
+                preConfirm: () => {  
                     $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                     });
-                    var service = $("#update_service").get(0);
-                    service_id = $('#service_id').val();
-                    link = "{{route('admin.service.update', ':id')}}";
-                    link = link.replace(':id', service_id);
+                    var about = $("#update_about").get(0);
+                    about_id = $('#about_id').val();
+                    
+                    link = "{{route('admin.about.update', ':id')}}";
+                    link = link.replace(':id', about_id);
                     return $.ajax({
                         type: "POST", 
                         url: link ,
                         processData: false,
                         contentType: false,
                         cache: false,
-                        data: new FormData(service), 
+                        data: new FormData(about), 
+                        
                         success: function(data) {
                             
                         },
@@ -275,48 +216,6 @@
                 })
             }
             
-
-            //delete data
-            function delete_service(service_id, service_title){
-                link = "{{route('admin.service.destroy', ':id')}}";
-                link = link.replace(':id', service_id);
-                
-                swal.fire({
-                    title: "Delete "+service_title+"?",
-                    text: ""+service_title+" will deleted on your project list!",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonClass: "btn-danger",
-                    confirmButtonText: "Delete",
-                    closeOnConfirm: true,
-                    preConfirm: (login) => {
-                        $.ajaxSetup({
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            }
-                        });
-                        return $.ajax({
-                            type: "DELETE", 
-                            url: link,
-                            datatype : "json", 
-                            data:{"_token": "{{ csrf_token() }}", id:service_id},
-                            success: function(data) {
-                            
-                            },
-                            error: function(data){
-                                swal.fire({title:"Form Failed to Deleted!", text:"This project was not deleted successfully", type:"error"});
-                            }
-                        }); 
-                    } 
-                }).then((result) => {
-                    if(result.value){
-                        swal.fire({title:"Project Deleted!", text:"This form has been deleted on your project list", type:"success"})
-                        .then(function(){ 
-                            window.location.href = "{{ url('/admin-dtw/about')}}";
-                        });
-                    }
-                })
-            }
         </script>
         <script src="../assets/libs/summernote/dist/summernote-bs4.min.js"></script>
         <script>

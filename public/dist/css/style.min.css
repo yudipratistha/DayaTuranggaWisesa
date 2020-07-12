@@ -35781,6 +35781,9 @@ html[dir="rtl"] [type="radio"] + label:before {
     height: 400px;
     flex-grow: 1;}
 
+    #map {
+        height: 400px;
+        flex-grow: 1;}
 .leaflet-popup-content p {
 	margin: 3px 0 !important;
 }

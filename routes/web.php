@@ -36,10 +36,10 @@ Route::group(['prefix' => 'admin-dtw'], function(){
 
     Route::group(['prefix' => 'about', 'middleware' => 'auth'], function () {
         Route::get('/', 'AboutController@index')->name('admin.about.index');
-        Route::get('/about-create', 'AboutController@store')->name('admin.about.create');
-        Route::get('/about-edit', 'AboutController@edit')->name('admin.about.edit');
-        Route::get('/about-update', 'AboutController@update')->name('admin.about.update');
-        Route::delete('/about-delete', 'AboutController@delete')->name('admin.about.delete');
+        Route::post('/about-create', 'AboutController@store')->name('admin.about.create');
+        Route::get('/about-edit/{id}', 'AboutController@edit')->name('admin.about.edit');
+        Route::post('/about-update/{id}', 'AboutController@update')->name('admin.about.update');
+        Route::post('/about-save/{id}', 'AboutController@saveAbout')->name('admin.about.save');
     });
 
     Route::group(['prefix' => 'service', 'middleware' => 'auth'], function () {
@@ -47,7 +47,7 @@ Route::group(['prefix' => 'admin-dtw'], function(){
         Route::post('/service-create', 'ServiceController@store')->name('admin.service.create');
         Route::get('/service-edit/{id}', 'ServiceController@edit')->name('admin.service.edit');
         Route::post('/service-update/{id}', 'ServiceController@update')->name('admin.service.update');
-        Route::delete('/service-delete', 'ServiceController@destroy')->name('admin.service.destroy');
+        Route::delete('/service-delete/{id}', 'ServiceController@destroy')->name('admin.service.destroy');
     });
 
     Route::group(['prefix' => 'portfolio', 'middleware' => 'auth'], function () {

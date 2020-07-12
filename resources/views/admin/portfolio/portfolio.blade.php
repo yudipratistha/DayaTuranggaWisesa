@@ -30,9 +30,6 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Portfolio</h4>
-                            @foreach($test as $num => $test)
-                               {{$test->PortfolioTag}}
-                            @endforeach
                             <div class="table-responsive">
                                 <table id="portfolio_table" class="table table-striped table-bordered">
                                     <thead>
@@ -138,7 +135,7 @@
                                         <select id="portfolio_tag_edit" name="portfolio_tag_edit" class="select2 form-control custom-select" style="width: 100%; height:36px;" >
                                             <option>Select</option>
                                             @foreach($portfolio_tags as $num => $portfolio_tag)
-                                                <option value="">{{$portfolio_tag->portfolio_tag_name}}</option>
+                                                <option value="{{$portfolio_tag->id}}">{{$portfolio_tag->portfolio_tag_name}}</option>
                                             @endforeach  
                                             </optgroup>
                                         </select>

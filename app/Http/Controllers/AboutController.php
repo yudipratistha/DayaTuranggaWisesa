@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\About;
-use App\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AboutController extends Controller
 {
@@ -25,7 +25,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $about = About::all();
+        $about =  About::all();
+        // return response()->json($about);
         return view('admin.about.about', compact('about'));
     }
 
@@ -47,7 +48,29 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $this->validate($request, ['about_photo' => 'file|max:5000']);
+        $about_count = About::all();
+       
+        if($about_count->isEmpty()){
+            $about = new About();
+            $about->about_title = $request->about_title;
+            $about->about_location = $request->about_location;
+            $about->about_description = $request->about_description;
+
+            $about_photo_extension = $request->file('about_photo')->extension();
+
+            $about_path = 'about/';
+            Storage::disk('public')->makeDirectory($about_path);
+
+            $path = $request->file('about_photo')->storeAs(
+                'public/'.$about_path, $request->about_title.'.'.$about_photo_extension
+            );
+            $about->about_photo_path = $about_path.$request->about_title.'.'.$about_photo_extension;
+        }
+        
+        $about->save();
+
+        return redirect('/');
     }
 
     /**
@@ -69,7 +92,9 @@ class AboutController extends Controller
      */
     public function edit($id)
     {
-        //
+        $about = About::find($id);
+        
+        return response()->json(array('data_about' => $about));
     }
 
     /**
@@ -81,7 +106,27 @@ class AboutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, ['about_photo' => 'file|max:5000']);
+
+        $about = About::find($id);
+        $about->about_title = $request->about_title;
+        $about->about_location = $request->about_location;
+        $about->about_description = $request->about_description;
+        
+        $about_photo_extension = $request->file('about_photo');
+
+        if(!empty($about_photo_extension)){
+            $about_photo_path = $about->about_photo_path;
+            Storage::delete('public/'.$about->about_photo_path);
+            $about_photo_path = substr($about_photo_path, 0, 6);
+            $path = $request->file('about_photo')->storeAs(
+                'public/'.$about_photo_path, $request->about_title.'.jpg'
+            );
+            $about->about_photo_path = $about_photo_path.$request->about_title.'.jpg';
+        }
+
+        $about->save();
+        return response()->json('success');
     }
 
     /**

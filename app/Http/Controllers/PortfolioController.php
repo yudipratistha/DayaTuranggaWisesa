@@ -26,12 +26,9 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        $test = Portfolio::with(array('PortfolioTag'=>function($query){
-            $query->select('id','portfolio_tag_name');
-        }))->get();
         $portfolio_tags = PortfolioTag::all();
         $portfolios = Portfolio::all();
-        return view('admin.portfolio.portfolio', compact('portfolios', 'portfolio_tags', 'test'));
+        return view('admin.portfolio.portfolio', compact('portfolios', 'portfolio_tags'));
     }
 
     /**
@@ -113,11 +110,11 @@ class PortfolioController extends Controller
         if(!empty($portfolio_photo_extension)){
             $portfolio_photo_path = $portfolio->portfolio_photo_path;
             Storage::delete('public/'.$portfolio->portfolio_photo_path);
-            $portfolio_photo_path = substr($portfolio_photo_path, 0, -10);
+            $portfolio_photo_path = substr($portfolio_photo_path, 0, -17);
             $path = $request->file('portfolio_photo_edit')->storeAs(
                 'public/'.$portfolio_photo_path, $request->portfolio_title_edit.'.jpg'
             );
-            $portfolio->portfolio_photo_path = $portfolio_photo_path.$request->portfolio_titleedit.'.jpg';
+            $portfolio->portfolio_photo_path = $portfolio_photo_path.$request->portfolio_title_edit.'.jpg';
         }
 
         $portfolio->save();
